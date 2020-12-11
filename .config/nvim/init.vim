@@ -14,8 +14,11 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'morhetz/gruvbox'
 
-" TypeScript syntax
+" TypeScript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
+
+" Test coverage - supports Instanbul
+Plug 'ruanyl/coverage.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -210,6 +213,21 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Specify the path to `coverage.json` file relative to your current working directory.
+let g:coverage_json_report_path = 'coverage/coverage-final.json'
+
+" Define the symbol display for covered lines
+let g:coverage_sign_covered = '⦿'
+
+" Define the interval time of updating the coverage lines
+let g:coverage_interval = 5000
+
+" Do not display signs on covered lines
+let g:coverage_show_covered = 1
+
+" Display signs on uncovered lines
+let g:coverage_show_uncovered = 1
 
 set relativenumber
 set smarttab
