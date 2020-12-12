@@ -10,6 +10,7 @@ set smartindent
 set smartcase
 set incsearch
 set colorcolumn=80
+set nohlsearch
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " 4 tabs for Python files
@@ -37,9 +38,11 @@ Plug 'ruanyl/coverage.vim'
 "Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep'
 
 " Theming and TypeScript syntax highlighting
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 "
 " Other
@@ -50,12 +53,9 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Color scheme and background transparency
-colorscheme gruvbox
+colorscheme onedark
 let g:gruvbox_transparent_bg=1
 hi Normal guibg=NONE ctermbg=NONE
-
-" ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " NERDTREE
 let g:NERDTreeGitStatusWithFlags = 1
@@ -64,8 +64,23 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap <C-_> <Plug>NERDCommenterToggle
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 
+" Coverag.vim
+let g:coverage_json_report_path = 'coverage/coverage-final.json'
+let g:coverage_sign_covered = '⦿'
+let g:coverage_interval = 100
+let g:coverage_show_covered = 1
+let g:coverage_show_uncovered = 1
+
+" Vim-gitgutter
+set updatetime=100
+let g:gitgutter_max_signs = -1
+
 " fzf
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+nnoremap <C-p> :Files<CR>
+nnoremap <C-o> :Buffers<CR>
+nnoremap <C-g> :GFiles<CR>
+nnoremap <C-f> :Rg!
 
 " CoC Config
 let g:coc_global_extensions = [
@@ -242,15 +257,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" Coverag.vim
-let g:coverage_json_report_path = 'coverage/coverage-final.json'
-let g:coverage_sign_covered = '⦿'
-let g:coverage_interval = 100
-let g:coverage_show_covered = 1
-let g:coverage_show_uncovered = 1
-
-" Vim-gitgutter
-set updatetime=100
-let g:gitgutter_max_signs = -1
 
