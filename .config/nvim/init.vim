@@ -1,24 +1,50 @@
+" Main vim override configs
+set number relativenumber
+set smarttab
+set cindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set list
+set smartindent
+set smartcase
+set incsearch
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" 4 tabs for Python files
+autocmd FileType python setl shiftwidth=4 sts=4 ts=2 et
+
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" NERDTree install
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+
+" Gutter stuff - Git and Instanbul test coverage
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ruanyl/coverage.vim'
+
+" Fuzzy finding
+" ctrlp superseded with fzf as it's much quicker
+"Plug 'ctrlpvim/ctrlp.vim' 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Theming and TypeScript syntax highlighting
+Plug 'morhetz/gruvbox'
+Plug 'HerringtonDarkholme/yats.vim'
+"
+" Other
 Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'morhetz/gruvbox'
-
-" TypeScript syntax highlighting
-Plug 'HerringtonDarkholme/yats.vim'
-
-" Test coverage - supports Instanbul
-Plug 'ruanyl/coverage.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -35,8 +61,11 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeIgnore = ['^node_modules$']
 nmap <C-n> :NERDTreeToggle<CR>
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
+
+" fzf
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " CoC Config
 let g:coc_global_extensions = [
@@ -214,27 +243,14 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" Specify the path to `coverage.json` file relative to your current working directory.
+" Coverag.vim
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
-
-" Define the symbol display for covered lines
 let g:coverage_sign_covered = '⦿'
-
-" Define the interval time of updating the coverage lines
-let g:coverage_interval = 5000
-
-" Do not display signs on covered lines
+let g:coverage_interval = 100
 let g:coverage_show_covered = 1
-
-" Display signs on uncovered lines
 let g:coverage_show_uncovered = 1
 
-set relativenumber
-set smarttab
-set cindent
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set colorcolumn=80
-
+" Vim-gitgutter
+set updatetime=100
+let g:gitgutter_max_signs = -1
 
