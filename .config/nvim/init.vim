@@ -30,8 +30,10 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
 " Gutter stuff - Git and Instanbul test coverage
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter' -> using vim-signify over vim gutter for speed.
 Plug 'ruanyl/coverage.vim'
+Plug 'mhinz/vim-signify'
+" https://github.com/APZelos/blamer.nvim
 
 " Fuzzy finding
 " ctrlp superseded with fzf as it's much quicker
@@ -53,11 +55,12 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Color scheme and background transparency
-colorscheme onedark
+colorscheme gruvbox
 let g:gruvbox_transparent_bg=1
 hi Normal guibg=NONE ctermbg=NONE
 
 " NERDTREE
+let NERDTreeShowHidden=1
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeIgnore = ['^node_modules$']
 nmap <C-n> :NERDTreeToggle<CR>
@@ -68,12 +71,25 @@ vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
 let g:coverage_sign_covered = '⦿'
 let g:coverage_interval = 100
-let g:coverage_show_covered = 1
+let g:coverage_show_covered = 0
 let g:coverage_show_uncovered = 1
 
 " Vim-gitgutter
-set updatetime=100
-let g:gitgutter_max_signs = -1
+"highlight GitGutterAdd guifg=#009900 ctermfg=Green
+"highlight GitGutterChange guifg=#bbbb00 ctermfg=Yellow
+"highlight GitGutterDelete guifg=#ff2222 ctermfg=Red
+"nmap ) <Plug>(GitGutterNextHunk)
+"nmap ( <Plug>(GitGutterPrevHunk)
+"let g:gitgutter_max_signs = -1
+"let g:gitgutter_enabled = 1
+"let g:gitgutter_map_keys= 0
+
+" Vim-gitgutter status bar
+"function! GitStatus()
+  "let [a,m,r] = GitGutterGetHunkSummary()
+  "return printf('+%d ~%d -%d', a, m, r)
+"endfunction
+"set statusline+=%{GitStatus()}
 
 " fzf
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
@@ -105,7 +121,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=200
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -127,6 +143,7 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<TAB>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
