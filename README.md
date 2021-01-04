@@ -12,28 +12,34 @@ reference are:
 
 # Usage
 
-1. Add the `dotman` alias to your `.bashrc` or `.zshrc` file
+## Installing dotfiles to other systems
+
+1. Create a `dotman` alias in the `.zshrc` file. Reload it, and add `dotfiles`
+to a `.gitignore` file in the home directory.
+
 ```sh
-# Add this line to zshrc and source it
-alias dotman='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+echo 'alias dotman="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"' >> $HOME/.zshrc
 source ~/.zshrc
-echo ".dotfiles.git" >> ~/.gitignore
+echo "dotfiles" >> ~/.gitignore
 ```
 
 2. Clone repo
 
 ```sh
-git clone git@github.com:jltwheeler/dotfiles.git
+git clone --bare git@github.com:jltwheeler/dotfiles.git $HOME/dotfiles
+```
 
-# Pulls dotfiles into their directories. Will fail if config files already
-# exist.
+3. Checkout and and prevent untracked files
+
+```sh 
 dotman checkout
-
-# Prevent untracked files from showing up on dotman status
 dotman config --local status.showUntrackedFiles no
 ```
 
-3. Add / update / delete dotfiles
+> **NOTE**: if you already have config files with identical names, checkout will
+> fail. Back up and remove files. Skip back up if you don't need them.
+
+4. Add / update / delete dotfiles
 
 ```sh
 dotman status
