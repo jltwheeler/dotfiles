@@ -51,5 +51,7 @@
     "python.formatting.blackArgs": [
         "-l 79"
     ],
-    "sourcery.token": "user_etn7b9Y1qRlsF0FOtsUEJpF1_wbQLCL5V5vqgSat6erRCv67fE4Oif2H9dE"
+    "sourcery.token": "user_etn7b9Y1qRlsF0FOtsUEJpF1_wbQLCL5V5vqgSat6erRCv67fE4Oif2H9dE",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim"
 }

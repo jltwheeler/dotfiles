@@ -9,5 +9,7 @@
     "typescript.tsx",
     "graphql"
   ],
-  "prettier.onlyUseLocalVersion": true
+  "prettier.onlyUseLocalVersion": true,
+  "eslint.quiet": false,
+  "eslint.autoFixOnSave": true
 }
