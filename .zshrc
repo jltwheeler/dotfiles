@@ -1,6 +1,3 @@
-# Boot neofetch
-neofetch
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,6 +13,9 @@ export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/josh/.oh-my-zsh"
+
+# For poetry
+fpath+=~/.zfunc
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -123,3 +123,5 @@ export NVM_DIR="$HOME/.nvm"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+export PATH="$HOME/.poetry/bin:$PATH"

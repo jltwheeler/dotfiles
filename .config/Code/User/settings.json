@@ -1,57 +1,65 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
-    "explorer.confirmDelete": false,
-    "window.zoomLevel": 0,
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    },
-    "editor.wordWrap": "on",
-    "vim.smartRelativeLine": true,
-    "editor.formatOnSave": true,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "colorize.languages": [
-        "javascript",
-        "typescript",
-        "css",
-        "sass",
-        "scss",
-        "less",
-        "postcss",
-        "sss",
-        "stylus",
-        "xml",
-        "svg"
-    ],
-    "editor.rulers": [79],
-     "workbench.colorTheme": "Cobalt2",
-    "editor.letterSpacing": 0.5,
-    "files.trimTrailingWhitespace": true,
-    "editor.fontWeight": "400",
-    "editor.renderWhitespace": "all",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "python.languageServer": "Pylance",
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "-l 79"
-    ],
-    "sourcery.token": "user_etn7b9Y1qRlsF0FOtsUEJpF1_wbQLCL5V5vqgSat6erRCv67fE4Oif2H9dE",
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim"
+  "workbench.iconTheme": "material-icon-theme",
+  "explorer.confirmDelete": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.wordWrap": "on",
+  "vim.smartRelativeLine": true,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "colorize.languages": [
+    "javascript",
+    "typescript",
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "postcss",
+    "sss",
+    "stylus",
+    "xml",
+    "svg"
+  ],
+  "editor.rulers": [79],
+  "workbench.colorTheme": "Celestial",
+  "workbench.colorCustomizations": {
+    "[Celestial]": {
+      "editorLineNumber.foreground": "#D5D8DA80",
+      "sideBar.background": "#16171f",
+      "sideBar.foreground": "#D5D8DA80",
+      "sideBar.dropBackground": "#6C6F934D",
+      "sideBarSectionHeader.background": "#0E0F13",
+      "sideBarSectionHeader.foreground": "#D5D8DAB3"
+    }
+  },
+  "editor.letterSpacing": 0.5,
+  "files.trimTrailingWhitespace": true,
+  "editor.fontWeight": "400",
+  "editor.renderWhitespace": "all",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "python.languageServer": "Pylance",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length=79"],
+  "sourcery.token": "user_etn7b9Y1qRlsF0FOtsUEJpF1_wbQLCL5V5vqgSat6erRCv67fE4Oif2H9dE",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "json.format.enable": false
 }
