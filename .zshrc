@@ -111,6 +111,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+### ALIASES ###
+
+# 
+alias ..='cd ../'
+alias ...='cd ../../'
+alias c='clear && clear'
+
+alias vim='nvim'
+alias vimrc='vim ~/.config/nvim/init.vim'
+alias zshrc='vim ~/.zshrc'
+alias tmuxrc='vim ~/.tmux.conf'
+alias nvmrc='node -v > .nvmrc'
+
+alias branch-clean='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias dunzo='gcm && ggl && gfa && branch-clean'
 
 # Alias for dotfile commands with bare git repo
 alias dotman='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
