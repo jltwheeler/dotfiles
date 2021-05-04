@@ -82,7 +82,7 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git z colored-man-pages zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,17 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 ### ALIASES ###
-
-# 
 alias ..='cd ../'
 alias ...='cd ../../'
 alias c='clear && clear'
@@ -123,9 +113,16 @@ alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'
 alias tmuxrc='vim ~/.tmux.conf'
 alias nvmrc='node -v > .nvmrc'
+alias jws='aws --profile jltw-dev'
+alias resrc='source ~/.zshrc'
 
+alias my-ip='dig +short myip.opendns @resolver1.opendns.com'
+alias reactcat='abd logcat *:S ReactNative:V ReactNativeJS:V'
 alias branch-clean='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 alias dunzo='gcm && ggl && gfa && branch-clean'
+alias dup='docker-compose up'
+alias ni='npm i'
+alias nid='npm i -D'
 
 # Alias for dotfile commands with bare git repo
 alias dotman='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
@@ -137,6 +134,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 export PATH="$HOME/.poetry/bin:$PATH"
