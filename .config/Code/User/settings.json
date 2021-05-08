@@ -33,40 +33,32 @@
     "svg"
   ],
   "editor.rulers": [79],
-  "workbench.colorTheme": "Celestial",
+  "workbench.colorTheme": "Night Owl",
   "workbench.colorCustomizations": {
-    "[Celestial]": {
-      "editorLineNumber.foreground": "#D5D8DA80",
-      "sideBar.background": "#171820",
-      "sideBar.foreground": "#D5D8DA80",
-      "sideBar.dropBackground": "#6C6F934D",
-      "sideBarSectionHeader.background": "#0E0F13",
-      "sideBarSectionHeader.foreground": "#D5D8DAB3"
-    }
-  },
-  "editor.semanticTokenColorCustomizations": {
-    "[Celestial]": {
-      "enabled": true,
-      "rules": {
-        "function": {
-          "foreground": "#25B0BCE6"
-        },
-        "variable": "#fff",
-        "interface": {
-          "foreground": "#E95678E6",
-          "italic": true
-        },
-        "type": {
-          "foreground": "#FAC29AE6",
-          "italic": true
-        },
-        "property": "#E95678E6",
-        "comment": {
-          "foreground": "#BBBBBB4D",
-          "fontStyle": "italic"
-        }
+      "[Celestial]": {
+          "editorLineNumber.foreground": "#D5D8DA80",
+          "sideBar.background": "#16171f",
+          "sideBar.foreground": "#D5D8DA80",
+          "sideBar.dropBackground": "#6C6F934D",
+          "sideBarSectionHeader.background": "#0E0F13",
+          "sideBarSectionHeader.foreground": "#D5D8DAB3"
+      },
+      "[Night Owl (No Italics)]": {
+          "sideBar.background": "#01111d",
+          "gitDecoration.conflictingResourceForeground": "#ff7200",
+          "gitDecoration.deletedResourceForeground": "#ff628c",
+          "gitDecoration.ignoredResourceForeground": "#808080",
+          "gitDecoration.modifiedResourceForeground": "#ffc600",
+          "gitDecoration.untrackedResourceForeground": "#3ad900"
+      },
+      "[Night Owl]": {
+          "sideBar.background": "#01111d",
+          "gitDecoration.conflictingResourceForeground": "#ff7200",
+          "gitDecoration.deletedResourceForeground": "#ff628c",
+          "gitDecoration.ignoredResourceForeground": "#808080",
+          "gitDecoration.modifiedResourceForeground": "#ffc600",
+          "gitDecoration.untrackedResourceForeground": "#3ad900"
       }
-    }
   },
   "editor.letterSpacing": 0.5,
   "files.trimTrailingWhitespace": true,
