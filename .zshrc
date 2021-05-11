@@ -118,6 +118,7 @@ alias resrc='source ~/.zshrc'
 
 alias my-ip='dig +short myip.opendns @resolver1.opendns.com'
 alias reactcat='abd logcat *:S ReactNative:V ReactNativeJS:V'
+alias utime='date +%s'
 alias branch-clean='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 alias dunzo='gcm && ggl && gfa && branch-clean'
 alias dup='docker-compose up'
