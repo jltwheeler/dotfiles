@@ -124,6 +124,7 @@ alias dunzo='gcm && ggl && gfa && branch-clean'
 alias dup='docker-compose up'
 alias ni='npm i'
 alias nid='npm i -D'
+alias tf='terraform'
 
 # Alias for dotfile commands with bare git repo
 alias dotman='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
