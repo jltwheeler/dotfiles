@@ -160,3 +160,6 @@ load-nvmrc
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# Allow fzf to also search hidden dot files
+export FZF_DEFAULT_COMMAND='find .* -type f'
