@@ -160,6 +160,3 @@ load-nvmrc
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="$HOME/.poetry/bin:$PATH"
-
-# For fzf
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
