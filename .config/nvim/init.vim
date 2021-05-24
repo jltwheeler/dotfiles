@@ -27,12 +27,17 @@ set nowrap
 " Start vertical scroll when 8 characters away
 set scrolloff=8
 
+" Natural window splitting feeling
+set splitbelow
+set splitright
+
 " Searching
 set incsearch
 set nohlsearch
 
 " Show all whitepsaces as characters
 set list
+set listchars=space:·,tab:>-,trail:~,extends:>,precedes:<
 
 " Revlative numbers
 set number relativenumber
@@ -185,7 +190,7 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 nnoremap <C-p> :Files<CR>
 nnoremap <C-o> :Buffers<CR>
 nnoremap <C-g> :GFiles<CR>
-nnoremap <C-f> :Rg<CR>
+nnoremap <s-f> :Rg<CR>
 nnoremap <s-h> :History<CR>
 
 " To tell fzf to search for hidden dot files, ensure the command below is
