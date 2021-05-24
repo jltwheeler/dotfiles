@@ -61,7 +61,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=50
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -77,6 +77,10 @@ Plug 'bluz71/vim-nightfly-guicolors'
 
 " Language server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Syntax highlight
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Node templating
 Plug 'mustache/vim-mustache-handlebars'
@@ -210,7 +214,7 @@ command! -bang -nargs=* Rg
 " -----------------------------------------------------------------------------
 
 let g:blamer_enabled = 1
-let g:blamer_delay = 500
+let g:blamer_delay = 750
 
 " -----------------------------------------------------------------------------
 "                                Fern Settings
@@ -269,9 +273,6 @@ nmap <leader>gj <plug>(signify-next-hunk)
 nmap <leader>gk <plug>(signify-prev-hunk)
 nmap <leader>gJ 9999<leader>gJ
 nmap <leader>gK 9999<leader>gk
-
-" Highlight toggle
-nmap <c-s-h> :SignifyToggleHighlight<CR>
 
 " -----------------------------------------------------------------------------
 "                               Coverage.vim
