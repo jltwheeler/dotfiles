@@ -72,11 +72,14 @@ set shortmess+=c
 
 call plug#begin('~/.vim/plugged')
 
-" Color theme - based on sdras vscode night-owl dark theme.
-Plug 'haishanh/night-owl.vim'
+" Color theme heavily inspired by Sarah Drasner's Night Owl VSC Theme
+Plug 'bluz71/vim-nightfly-guicolors'
 
 " Language server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Node templating
+Plug 'mustache/vim-mustache-handlebars'
 
 " NB: ensure both ripgrep and fzf are installed on the machine first.
 Plug '/usr/local/opt/fzf'
@@ -95,6 +98,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Git stuff
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'APZelos/blamer.nvim'
 
 " Test coverage gutters
 Plug 'ruanyl/coverage.vim'
@@ -115,7 +119,7 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
-colorscheme night-owl
+colorscheme nightfly
 
 " -----------------------------------------------------------------------------
 "                                Vim Airline
@@ -132,9 +136,6 @@ colorscheme night-owl
 " let g:airline_powerline_fonts = 1
 " let g:airline_left_sep = ''
 " let g:airline_right_sep = ''
-
-" Switch to your current theme
-" let g:airline_theme = 'night_owl'
 
 " Always show tabs
 " set showtabline=2
@@ -202,6 +203,14 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
+
+
+" -----------------------------------------------------------------------------
+"                                  Blamer
+" -----------------------------------------------------------------------------
+
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
 
 " -----------------------------------------------------------------------------
 "                                Fern Settings
@@ -397,4 +406,3 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
