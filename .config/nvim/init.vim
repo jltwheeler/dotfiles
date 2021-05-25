@@ -303,6 +303,7 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<TAB>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
