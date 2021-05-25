@@ -79,8 +79,9 @@ Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Syntax highlight
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 
 " Node templating
 Plug 'mustache/vim-mustache-handlebars'
