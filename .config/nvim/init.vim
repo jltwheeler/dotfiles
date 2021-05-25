@@ -231,7 +231,7 @@ let g:fern#drawer_width = 30
 let g:fern#default_hidden = 1
 let g:fern#disable_drawer_auto_quit = 1
 
-noremap <C-n> :Fern . -drawer -toggle <CR>
+noremap <C-n> :Fern . -reveal=% -drawer -toggle <CR>
 
 function! s:init_fern() abort
   nmap <buffer> s <Plug>(fern-action-open:split)
