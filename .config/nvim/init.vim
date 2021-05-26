@@ -293,6 +293,9 @@ let g:coverage_show_uncovered = 1
 " CoC Config
 let g:coc_global_extensions = ['coc-snippets', 'coc-html', 'coc-css', 'coc-pairs', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-json']
 
+" Close suggestion windows when they get stuck using double escape
+nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#float#close_all()<CR>
+
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
