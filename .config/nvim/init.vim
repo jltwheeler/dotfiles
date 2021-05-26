@@ -168,12 +168,6 @@ nmap sv :vsplit<Return><C-w>w
 nmap <S-Tab> :tabprev<Return>
 nmap <Tab> :tabnext<Return>
 
-" Navigate around splits with a single key combo.
-nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-j> <C-w><C-j>
-
 " Remap comment toggle in tpope/vim-commentary to 'ctrl + /'
 nmap <C-_> gcc
 vmap <C-_> gcc
