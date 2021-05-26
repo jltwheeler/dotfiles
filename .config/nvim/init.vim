@@ -24,6 +24,10 @@ set cindent
 " Turn off word wrapping
 set nowrap
 
+" Let language syntax take care of folding blocks
+set foldmethod=syntax
+set foldlevelstart=20 " opens folds by default on buffer load
+
 " Start vertical scroll when 8 characters away
 set scrolloff=8
 
