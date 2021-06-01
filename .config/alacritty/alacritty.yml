@@ -41,12 +41,14 @@ selection:
 # Live config reload (changes require restart)
 live_config_reload: true
 
+background_opacity: 0.7
+
 # Cobalt2 Wes Bos inspired color scheme
 colors:
   # Default colors
   primary:
-    background: '0x122637'
-    foreground: '0xffffff'
+    background: '0x011627'
+    foreground: '0xd6deeb'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
