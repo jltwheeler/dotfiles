@@ -36,6 +36,7 @@ font:
   use_thin_strokes: true
 
 selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t·"
   save_to_clipboard: true
 
 # Live config reload (changes require restart)
