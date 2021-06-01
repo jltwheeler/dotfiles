@@ -41,7 +41,7 @@ selection:
 # Live config reload (changes require restart)
 live_config_reload: true
 
-background_opacity: 0.7
+background_opacity: 0.875
 
 # Cobalt2 Wes Bos inspired color scheme
 colors:
