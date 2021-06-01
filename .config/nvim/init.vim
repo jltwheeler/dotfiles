@@ -13,6 +13,9 @@
 "                                Basic Settings
 " -----------------------------------------------------------------------------
 
+" set leader key to spacebar
+let mapleader=" "
+
 " Indentation and tabbing
 set tabstop=2
 set shiftwidth=2
@@ -198,9 +201,10 @@ au FocusGained,BufEnter * :checktime
 
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 nnoremap <C-p> :Files<CR>
-nnoremap <C-o> :Buffers<CR>
 nnoremap <C-g> :GFiles<CR>
-nnoremap <s-f> :Rg<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>gg :GFiles?<CR>
+nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <s-h> :History<CR>
 
 " To tell fzf to search for hidden dot files, ensure the command below is
@@ -361,8 +365,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
