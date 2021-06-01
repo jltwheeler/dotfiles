@@ -82,6 +82,9 @@ Plug 'bluz71/vim-nightfly-guicolors'
 " Language server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Emmet for html / jsx completion
+Plug 'mattn/emmet-vim'
+
 " Syntax highlight
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
