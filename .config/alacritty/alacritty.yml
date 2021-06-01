@@ -21,7 +21,7 @@ window:
   dynamic_title: false
 
 font:
-  size: 14
+  size: 14.5
   normal:
     family: Hack Nerd Font Mono
   bold:
@@ -50,8 +50,8 @@ colors:
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x122637'
-    cursor: '0xf0cb09'
+    text: '0x011627'
+    cursor: '0xdee2ea'
 
   # Normal colors
   normal:
