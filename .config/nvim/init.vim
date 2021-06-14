@@ -92,6 +92,7 @@ Plug 'mattn/emmet-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'  " Rust support
 
 " Node templating
 Plug 'mustache/vim-mustache-handlebars'
@@ -294,11 +295,27 @@ let g:coverage_show_covered = 0
 let g:coverage_show_uncovered = 1
 
 " -----------------------------------------------------------------------------
+"                               Rust
+" -----------------------------------------------------------------------------
+
+let g:rustfmt_autosave = 1  " automatic running of rustfmt on save
+
+" -----------------------------------------------------------------------------
 "                               Coc
 " -----------------------------------------------------------------------------
 
 " CoC Config
-let g:coc_global_extensions = ['coc-snippets', 'coc-html', 'coc-css', 'coc-pairs', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-json']
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-html',
+  \ 'coc-css',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \ 'coc-rust-analyzer',
+  \ ]
 
 " Close suggestion windows when they get stuck using double escape
 nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#float#close_all()<CR>
