@@ -42,6 +42,10 @@ set splitright
 set incsearch
 set nohlsearch
 
+" Turn off case sensitive searching
+set ignorecase
+set smartcase
+
 " Show all whitepsaces as characters
 set list
 set listchars=space:·,tab:>-,trail:~,extends:>,precedes:<
