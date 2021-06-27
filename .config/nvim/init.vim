@@ -319,6 +319,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-rust-analyzer',
+  \ 'coc-pyright',
   \ ]
 
 " Close suggestion windows when they get stuck using double escape
