@@ -97,6 +97,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'  " Rust support
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " Node templating
 Plug 'mustache/vim-mustache-handlebars'
