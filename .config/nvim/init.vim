@@ -301,10 +301,12 @@ let g:coverage_show_covered = 0
 let g:coverage_show_uncovered = 1
 
 " -----------------------------------------------------------------------------
-"                               Rust
+"                               Syntax 
 " -----------------------------------------------------------------------------
 
 let g:rustfmt_autosave = 1  " automatic running of rustfmt on save
+let g:terraform_align=1  " automatic tf align
+let g:terraform_fmt_on_save=1  " automatic tf formatting.
 
 " -----------------------------------------------------------------------------
 "                               Coc
