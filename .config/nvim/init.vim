@@ -16,6 +16,9 @@
 " set leader key to spacebar
 let mapleader=" "
 
+" For spell checking
+set spelllang=en
+
 " Indentation and tabbing
 set tabstop=2
 set shiftwidth=2
@@ -99,9 +102,13 @@ Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'  " Rust support
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'hashivim/vim-terraform'
+Plug 'styled-components/vim-styled-components'
 
 " Node templating
 Plug 'mustache/vim-mustache-handlebars'
+
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " NB: ensure both ripgrep and fzf are installed on the machine first.
 Plug '/usr/local/opt/fzf'
