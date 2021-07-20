@@ -196,6 +196,9 @@ vmap <C-_> gcc
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 
+" Toggle checker
+nnoremap <silent> <leader>sc :set spell!<CR>
+
 " -----------------------------------------------------------------------------
 "                                Auto Commands
 " -----------------------------------------------------------------------------
