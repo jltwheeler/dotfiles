@@ -103,6 +103,7 @@ Plug 'rust-lang/rust.vim'  " Rust support
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'hashivim/vim-terraform'
 Plug 'styled-components/vim-styled-components'
+Plug 'vim-ruby/vim-ruby'
 
 " Node templating
 Plug 'mustache/vim-mustache-handlebars'
@@ -199,6 +200,20 @@ vmap <C-_> gcc
 " Toggle checker
 nnoremap <silent> <leader>sc :set spell!<CR>
 
+" Yanking to behave like other Vim commands.
+nnoremap Y y$
+
+" Keep searches and joins centered 
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Add undo break points for special characters
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
 " -----------------------------------------------------------------------------
 "                                Auto Commands
 " -----------------------------------------------------------------------------
@@ -211,6 +226,10 @@ autocmd VimResized * wincmd =
 
 " Update a buffer's contents on focus if it changed outside of Vim.
 au FocusGained,BufEnter * :checktime
+
+" forces nvim to rescan the entire buffer when highlighting
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " -----------------------------------------------------------------------------
 "                               FZF Settings
