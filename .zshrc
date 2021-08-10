@@ -8,21 +8,14 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# For tmux we need 256 colors
-export TERM="xterm-256color"
-
 # Path to your oh-my-zsh installation.
-export ZSH="/home/josh/.oh-my-zsh"
-
-# For poetry
-fpath+=~/.zfunc
+export ZSH="/Users/jwheeler/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_MODE="nerdfont-complete"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -59,6 +52,8 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -82,7 +77,7 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z colored-man-pages zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git colored-man-pages zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,38 +98,64 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+### ENVIRONMENT VARS ###
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
 ### ALIASES ###
-alias ..='cd ../'
-alias ...='cd ../../'
+alias ..='cd ..'
+alias ...='cd ../..'
 alias c='clear && clear'
 
 alias vim='nvim'
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'
 alias tmuxrc='vim ~/.tmux.conf'
-alias nvmrc='node -v > .nvmrc'
 alias jws='aws --profile jltw-dev'
 alias resrc='source ~/.zshrc'
 
-alias my-ip='dig +short myip.opendns @resolver1.opendns.com'
-alias reactcat='abd logcat *:S ReactNative:V ReactNativeJS:V'
+# utility
+alias my-ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias reactcat='adb logcat *:S ReactNative:V ReactNativeJS:V'
 alias utime='date +%s'
-alias branch-clean='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
-alias dunzo='gcm && ggl && gfa && branch-clean'
+alias oports='sudo lsof -i -P -n | grep LISTEN'
 alias dup='docker-compose up'
 alias ni='npm i'
 alias nid='npm i -D'
 alias tf='terraform'
+alias ide='source ~/scripts/ide.sh'
 
-# Alias for dotfile commands with bare git repo
-alias dotman='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+# git stuff
+alias branch-clean='git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d'
+alias dunzo='gcm && ggl && gfa && branch-clean'
+alias gsort='git for-each-ref --sort=-committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))"'
+
+# By Miles
+alias cam='cd ~/dev/bymiles-cam'
+alias engine='cd ~/dev/bymiles-engine'
+alias dashboard='cd ~/dev/bymiles-dashboard'
+alias dealer='cd ~/dev/bymiles-dealership'
+alias mobile='cd ~/dev/bymiles-mobile-app'
+alias glove='cd ~/dev/bymiles-glovebox'
+alias radio='cd ~/dev/bymiles-radio'
+alias make-me='npm run db:userdata:generate -- --uuid 0605549a-98cd-4c63-9ee3-9d36ba4f6db9'
+alias eclean='npm run db:userdata:generate -- --clean'
+alias etclean='NODE_ENV=test npm run db:userdata:generate -- --clean'
+alias start-mobile='./node_modules/.bin/react-native run-ios --simulator="iPhone X"'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # For nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# nvm auto change node version based on .nvmrc file in a directory
+# Automatically change node version based on .nvmrc file in a directory
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -156,10 +177,19 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# For rbenv
+eval "$(rbenv init -)"
+
+# For z
+. $(brew --prefix)/etc/profile.d/z.sh
+
+# For fzf
+# export FZF_DEFAULT_COMMAND='find .* -type f'
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-# Allow fzf to also search hidden dot files
-export FZF_DEFAULT_COMMAND='find .* -type f'
+# For asdf
+. $(brew --prefix asdf)/asdf.sh
+
+
+source /Users/jwheeler/.config/broot/launcher/bash/br
