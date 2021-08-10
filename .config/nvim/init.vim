@@ -197,6 +197,9 @@ vmap <C-_> gcc
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 
+" Git diff split view
+nnoremap <leader>gs :Gdiffsplit<CR>
+
 " Toggle checker
 nnoremap <silent> <leader>sc :set spell!<CR>
 
