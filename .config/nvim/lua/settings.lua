@@ -17,9 +17,6 @@ opt.cindent = true
 -- Turn off word wrapping
 wo.wrap = false
 
--- Disable continuation of comments on next line
-bo.formatoptions = bo.formatoptions:gsub('cro', '')
-
 -- Let language syntax take care of folding blocks
 wo.foldmethod = "syntax"
 opt.foldlevelstart = 20 -- opens folds by default on buffer load
