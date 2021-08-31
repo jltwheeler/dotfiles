@@ -109,7 +109,7 @@ alias ...='cd ../../'
 alias c='clear && clear'
 
 alias vim='nvim'
-alias vimrc='vim ~/.config/nvim/init.vim'
+alias vimrc='vim ~/.config/nvim/init.lua'
 alias zshrc='vim ~/.zshrc'
 alias tmuxrc='vim ~/.tmux.conf'
 alias nvmrc='node -v > .nvmrc'
