@@ -128,6 +128,7 @@ alias tf='terraform'
 
 # Alias for dotfile commands with bare git repo
 alias dotman='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dm='dotman'
 
 # For nvm
 export NVM_DIR="$HOME/.nvm"
