@@ -41,7 +41,10 @@ return require('packer').startup(function()
   -- Treesitter for better syntax highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = ':TSUpdate',
+    config = function()
+         require "plugins.config.treesitter"
+    end,
   }
 
   -- Colorscheme (with treesitter support)
@@ -53,9 +56,11 @@ return require('packer').startup(function()
   -- Statusline
   use {
     'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config = function()
+         require "plugins.config.lualine"
+    end,
   }
-  require('lualine').setup({options = {theme = 'nightfly'}})
 
   -- File explorer
   use {

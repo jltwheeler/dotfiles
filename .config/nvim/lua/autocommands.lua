@@ -6,7 +6,7 @@ utils.define_augroups({
         {'BufWinEnter', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'o\'})'},
         {'BufRead', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'o\'})'},
         {'BufNewFile', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'o\'})'},
-        {'BufWritePost', 'plugins.lua source <afile> | PackerCompile'},
+        {'BufWritePost', 'plugins/init.lua source <afile> | PackerCompile'},
     },
     --_markdown = {{'FileType', 'markdown', 'setlocal wrap'}, {'FileType', 'markdown', 'setlocal spell'}},
     --_buffer_bindings = {
