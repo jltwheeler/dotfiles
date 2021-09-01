@@ -3,6 +3,10 @@ local wo = vim.wo
 local bo = vim.bo
 local g = vim.g
 
+-- Colorscheme
+opt.termguicolors = true
+vim.cmd [[colorscheme nightfly]]
+
 -- For spell checking
 opt.spelllang = "en"
 
