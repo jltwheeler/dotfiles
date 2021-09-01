@@ -11,14 +11,6 @@ vim.g.mapleader = ' '
 keymap('n', 'ss', ':split<Return><C-w>w', { noremap = false, silent = false })
 keymap('n', 'sv', ':vsplit<Return><C-w>w', { noremap = false, silent = false })
 
--- Switch tab
-keymap('n', '<S-Tab>', ':tabprev<Return>', { noremap = false, silent = false })
-keymap('n', '<Tab>', ':tabnext<Return>', { noremap = false, silent = false })
-
--- Remap comment toggle in tpope/vim-commentary to 'ctrl + /'
-keymap('n', '<C-_>', 'gcc', { noremap = false, silent = false })
-keymap('v', '<C-_>', 'gcc', { noremap = false, silent = false })
-
 -- Buffer switching
 keymap('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = false })
 keymap('n', '<S-Tab>', ':bprevious<CR>', { noremap = true, silent = false })
