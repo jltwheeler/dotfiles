@@ -1,7 +1,7 @@
 local opt = vim.opt
 local wo = vim.wo
 local bo = vim.bo
-local g = vim.g
+local fn = vim.fn
 
 -- Colorscheme
 opt.termguicolors = true
@@ -52,7 +52,8 @@ vim.highlight.create('ColorColumn', {ctermbg=0, guibg=lightgrey}, false)
 -- Get rid of swap files and backups - generally never use these features.
 opt.swapfile = false
 opt.backup = false
-opt.undodir = "~/.vim/undodir"
+
+opt.undodir = fn.getenv("HOME").."/.vim/undodir"
 opt.undofile = true
 
 opt.hidden = true
