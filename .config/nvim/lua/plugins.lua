@@ -38,6 +38,9 @@ require('packer').startup(function()
       requires = 'kyazdani42/nvim-web-devicons'
   }
 
+  -- Add indentation guides even on blank lines
+  use 'lukas-reineke/indent-blankline.nvim'
+
   -- Easy navigation between tmux panes and vim
   use 'christoomey/vim-tmux-navigator'
 

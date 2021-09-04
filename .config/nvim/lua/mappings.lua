@@ -35,6 +35,10 @@ keymap('i', '.', '.<c-g>u', { noremap = true, silent = false })
 keymap('i', '!', '!<c-g>u', { noremap = true, silent = false })
 keymap('i', '?', '?<c-g>u', { noremap = true, silent = false })
 
+-- File explorer
+keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = false })
+keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = true, silent = false })
+
 -- Add Telescope leader shortcuts
 keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
 keymap('n', '<leader>ff', '<cmd>lua require(\'telescope.builtin\').find_files()<cr>', { noremap = true, silent = false })
