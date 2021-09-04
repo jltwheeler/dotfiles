@@ -48,6 +48,7 @@ keymap('n', '<leader>fw', '<cmd>lua require(\'telescope.builtin\').live_grep()<c
 keymap('n', '<leader>fb', '<cmd>lua require(\'telescope.builtin\').buffers()<cr>', { noremap = true, silent = false })
 keymap('n', '<leader>fh', '<cmd>lua require(\'telescope.builtin\').help_tags()<cr>', { noremap = true, silent = false })
 keymap('n', '<leader>fd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
+keymap('n', '<leader>fv', [[<cmd>lua require('jw.telescope').search_config_nvim()<CR>]], { noremap = true, silent = true })
 
 -- Gitsigns hunk navigation
 keymap('n', '<leader>gj', ':Gitsigns prev_hunk<CR>', { noremap = false, silent = false })
