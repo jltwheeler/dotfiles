@@ -2,10 +2,22 @@ require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   
-  -- Treesitter for better syntax highlighting
+  -- Treesitter for better syntax highlighting via tree parsing
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
+  }
+  -- Additional textobjects for treesitter
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+
+  -- Collection of configurations for built-in LSP client
+  use 'neovim/nvim-lspconfig' -- Configure the built-in LSP client
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   -- Colorscheme (with treesitter support)
@@ -27,6 +39,7 @@ require('packer').startup(function()
   }
 
   -- Git plugins
+  use 'tpope/vim-fugitive' -- Git commands in nvim
   -- Git gutter signs
   use {
     'lewis6991/gitsigns.nvim',

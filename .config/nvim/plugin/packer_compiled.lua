@@ -74,6 +74,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/josh/.local/share/nvim/site/pack/packer/start/blamer.nvim"
   },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/josh/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/josh/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
@@ -86,9 +90,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/josh/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/josh/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+  },
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/josh/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/josh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -97,6 +109,10 @@ _G.packer_plugins = {
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/josh/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/home/josh/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -109,6 +125,14 @@ _G.packer_plugins = {
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/josh/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/josh/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/josh/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
   ["vim-nightfly-guicolors"] = {
     loaded = true,
