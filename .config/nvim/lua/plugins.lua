@@ -5,10 +5,7 @@ require('packer').startup(function()
   -- Treesitter for better syntax highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = function()
-         require "plugins.config.treesitter"
-    end,
+    run = ':TSUpdate'
   }
 
   -- Colorscheme (with treesitter support)
@@ -21,9 +18,6 @@ require('packer').startup(function()
   use {
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    config = function()
-         require "plugins.config.lualine"
-    end,
   }
 
   -- File explorer
