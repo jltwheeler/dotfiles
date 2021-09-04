@@ -38,6 +38,9 @@ require('packer').startup(function()
       requires = 'kyazdani42/nvim-web-devicons'
   }
 
+  -- Easy navigation between tmux panes and vim
+  use 'christoomey/vim-tmux-navigator'
+
   -- Git plugins
   use 'tpope/vim-fugitive' -- Git commands in nvim
   -- Git gutter signs

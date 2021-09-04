@@ -26,3 +26,27 @@ vim.api.nvim_exec(
 ]],
   false
 )
+
+-- Change tabs to be 4 spaces for python files only
+vim.api.nvim_exec(
+  [[
+    autocmd FileType python setl shiftwidth=4 sts=4 ts=2 et
+  ]],
+  false
+)
+
+-- Auto-resize splits when Vim gets resized.
+vim.api.nvim_exec(
+  [[
+    autocmd VimResized * wincmd =
+  ]],
+  false
+)
+
+-- Update a buffer's contents on focus if it changed outside of Vim.
+vim.api.nvim_exec(
+  [[
+    au FocusGained,BufEnter * :checktime
+  ]],
+  false
+)

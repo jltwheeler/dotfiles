@@ -16,7 +16,7 @@ keymap('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = false })
 keymap('n', '<S-Tab>', ':bprevious<CR>', { noremap = true, silent = false })
 
 -- Git diff split view
--- nnoremap <leader>gs :Gdiffsplit<CR>
+keymap('n', '<leader>gs', ':Gdiffsplit<CR>', { noremap = true, silent = false })
 
 -- Toggle checker
 keymap('n', '<leader>sc', 'spell!<CR>', { noremap = true, silent = true })
