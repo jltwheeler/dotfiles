@@ -35,3 +35,16 @@ keymap('i', '.', '.<c-g>u', { noremap = true, silent = false })
 keymap('i', '!', '!<c-g>u', { noremap = true, silent = false })
 keymap('i', '?', '?<c-g>u', { noremap = true, silent = false })
 
+-- Add Telescope leader shortcuts
+keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
+keymap('n', '<leader>ff', '<cmd>lua require(\'telescope.builtin\').find_files()<cr>', { noremap = true, silent = false })
+keymap('n', '<leader>fg', '<cmd>lua require(\'telescope.builtin\').git_files()<cr>', { noremap = true, silent = false })
+keymap('n', '<leader>fs', '<cmd>lua require(\'telescope.builtin\').git_status()<cr>', { noremap = true, silent = false })
+keymap('n', '<leader>fw', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>', { noremap = true, silent = false })
+keymap('n', '<leader>fb', '<cmd>lua require(\'telescope.builtin\').buffers()<cr>', { noremap = true, silent = false })
+keymap('n', '<leader>fh', '<cmd>lua require(\'telescope.builtin\').help_tags()<cr>', { noremap = true, silent = false })
+keymap('n', '<leader>fd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
+
+-- Gitsigns hunk navigation
+keymap('n', '<leader>gj', ':Gitsigns prev_hunk<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>gk', ':Gitsigns next_hunk<CR>', { noremap = false, silent = false })
