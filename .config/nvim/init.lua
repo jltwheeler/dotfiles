@@ -1,3 +1,4 @@
+require('start')
 require('utils')
 require('settings')
 require('mappings')
