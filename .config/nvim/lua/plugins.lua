@@ -9,11 +9,22 @@ require('packer').startup(function()
   }
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  -- Use treesitter to auto close and auto rename html tag
+  use 'windwp/nvim-ts-autotag'
 
   -- Collection of configurations for built-in LSP client
   use 'neovim/nvim-lspconfig' -- Configure the built-in LSP client
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'nvim-lua/plenary.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup{}
+    end
+  }
 
   use {
     'nvim-telescope/telescope.nvim',
@@ -61,8 +72,11 @@ require('packer').startup(function()
     end
   }
 
-  -- Utility plugins
-  use 'b3nj5m1n/kommentary'
+  -- Commenting library
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  -- use 'b3nj5m1n/kommentary'
+
+  -- Vim-like operations for surrounding characters
   use 'tpope/vim-surround'
 
 end)
