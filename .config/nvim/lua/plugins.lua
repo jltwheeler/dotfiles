@@ -14,8 +14,16 @@ require('packer').startup(function()
 
   -- Collection of configurations for built-in LSP client
   use 'neovim/nvim-lspconfig' -- Configure the built-in LSP client
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp'
+  -- Autocompletion plugin
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/vim-vsnip",
+      "hrsh7th/cmp-buffer",
+    }
+  }
+  use 'onsails/lspkind-nvim'  -- Custom icons on completion menu
+
   use 'nvim-lua/plenary.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
@@ -73,8 +81,8 @@ require('packer').startup(function()
   }
 
   -- Commenting library
+  use 'b3nj5m1n/kommentary'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
-  -- use 'b3nj5m1n/kommentary'
 
   -- Vim-like operations for surrounding characters
   use 'tpope/vim-surround'
