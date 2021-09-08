@@ -116,6 +116,7 @@ alias tmuxrc='vim ~/.tmux.conf'
 alias nvmrc='node -v > .nvmrc'
 alias jws='aws --profile jltw-dev'
 alias resrc='source ~/.zshrc'
+alias aptsync='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 
 alias my-ip='dig +short myip.opendns @resolver1.opendns.com'
 alias reactcat='abd logcat *:S ReactNative:V ReactNativeJS:V'
