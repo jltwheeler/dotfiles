@@ -3,9 +3,9 @@ local utils = require('.utils')
 utils.define_augroups({
     _general_settings = {
         -- Disable continuation of comments on next line
-        {'BufWinEnter', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'o\'})'},
-        {'BufRead', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'o\'})'},
-        {'BufNewFile', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'o\'})'},
+        {'BufWinEnter', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
+        {'BufRead', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
+        {'BufNewFile', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
     },
     --_markdown = {{'FileType', 'markdown', 'setlocal wrap'}, {'FileType', 'markdown', 'setlocal spell'}},
     --_buffer_bindings = {
@@ -50,3 +50,6 @@ vim.api.nvim_exec(
   ]],
   false
 )
+
+-- Disable indent blank line on nvim-dashboard
+vim.cmd("let g:indentLine_fileTypeExclude = ['dashboard']")

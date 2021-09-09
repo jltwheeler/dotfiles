@@ -1,13 +1,23 @@
--- use npm for installing pyright and tsserver
--- npm install -g typescript typescript-language-server diagnostic-languageserver eslint_d pyright
-
 local nvim_lsp = require('lspconfig')
 
-local servers = {'pyright', 'rust_analyzer'}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {}
-end
-local nvim_lsp = require("lspconfig")
+-- IMPORTANT: use npm for installing language servers. Copy the command below:
+-- npm install -g typescript typescript-language-server diagnostic-languageserver eslint_d pyright
+
+-- Python
+nvim_lsp['pyright'].setup {}
+
+-- Rust language server
+require('rust-tools').setup({
+  tools = {
+    hover_with_actions = false,
+    runnables = {
+      use_telescope = false
+    },
+    debuggables = {
+      use_telescope = false
+    },
+  }
+})
 
 -- Enable null-ls integration for eslint integration
 require("null-ls").config {}
@@ -22,13 +32,11 @@ nvim_lsp.tsserver.setup {
 
         local ts_utils = require("nvim-lsp-ts-utils")
 
-        -- defaults
         ts_utils.setup {
             debug = false,
             disable_commands = false,
             enable_import_on_completion = true,
 
-            -- import all
             import_all_timeout = 5000, -- ms
             import_all_priorities = {
                 buffers = 4, -- loaded buffer names
@@ -52,7 +60,7 @@ nvim_lsp.tsserver.setup {
             formatter_opts = {},
 
             -- update imports on file move
-            update_imports_on_move = false,
+            update_imports_on_move = true,
             require_confirmation_on_move = false,
             watch_dir = nil,
 

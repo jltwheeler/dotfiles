@@ -23,16 +23,33 @@ require('packer').startup(function()
     }
   }
   use 'onsails/lspkind-nvim'  -- Custom icons on completion menu
+  -- nvim cmp sources
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-calc'
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
 
+  -- TypeScript lsp utils setup
   use 'nvim-lua/plenary.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+  -- Rust lsp utils
+  use 'simrat39/rust-tools.nvim'
+
   use {
     'windwp/nvim-autopairs',
     config = function()
       require('nvim-autopairs').setup{}
     end
   }
+
+  -- Dashboard UI when opening neovim
+  use 'glepnir/dashboard-nvim'
 
   use {
     'nvim-telescope/telescope.nvim',
