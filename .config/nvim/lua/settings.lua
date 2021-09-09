@@ -1,6 +1,4 @@
 local opt = vim.opt
-local wo = vim.wo
-local bo = vim.bo
 local fn = vim.fn
 
 -- Colorscheme
@@ -19,14 +17,14 @@ opt.expandtab = true
 opt.cindent = true
 
 -- Turn off word wrapping
-wo.wrap = false
+opt.wrap = false
 
 -- Let language syntax take care of folding blocks
-wo.foldmethod = "syntax"
+opt.foldmethod = "syntax"
 opt.foldlevelstart = 20 -- opens folds by default on buffer load
 
 -- Start vertical scroll when 8 characters away
-wo.scrolloff = 8
+opt.scrolloff = 8
 
 -- Natural window splitting feeling
 opt.splitbelow = true
@@ -41,13 +39,14 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Relative numbers
-wo.relativenumber = true
-wo.number = true
+opt.relativenumber = true
+opt.number = true
 
--- Ruler at 80 characters
+-- Ruler and columns
 opt.colorcolumn = "80"
 opt.signcolumn = "yes"
 vim.highlight.create('ColorColumn', {ctermbg=0, guibg=lightgrey}, false)
+opt.cursorline = true
 
 -- Get rid of swap files and backups - generally never use these features.
 opt.swapfile = false

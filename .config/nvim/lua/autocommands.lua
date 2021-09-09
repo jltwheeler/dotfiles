@@ -6,6 +6,12 @@ utils.define_augroups({
         {'BufWinEnter', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
         {'BufRead', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
         {'BufNewFile', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
+        {'VimEnter', '*', 'PackerSync'}, -- Sync plugin updates on open of vim
+        {'TextYankPost', '*', 'silent! lua vim.highlight.on_yank()'}, -- Highlight on yank
+        {'FileType', 'python', 'setl shiftwidth=4 sts=4 ts=2 et'},  -- Change tabs to be 4 spaces for python files only
+        {'VimResized','*','wincmd ='}, -- Auto-resize splits when Vim gets resized.
+        {'FocusGained', '*', ':checktime'}, -- Auto-resize splits when Vim gets resized.
+        {'BufEnter', '*', ':checktime'}, -- Update a buffer's contents on focus if it changed outside of Vim.
     },
     --_markdown = {{'FileType', 'markdown', 'setlocal wrap'}, {'FileType', 'markdown', 'setlocal spell'}},
     --_buffer_bindings = {
@@ -15,41 +21,6 @@ utils.define_augroups({
     --},
     --_auto_formatters = auto_formatters
 })
-
--- Highlight on yank
-vim.api.nvim_exec(
-  [[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-  augroup end
-]],
-  false
-)
-
--- Change tabs to be 4 spaces for python files only
-vim.api.nvim_exec(
-  [[
-    autocmd FileType python setl shiftwidth=4 sts=4 ts=2 et
-  ]],
-  false
-)
-
--- Auto-resize splits when Vim gets resized.
-vim.api.nvim_exec(
-  [[
-    autocmd VimResized * wincmd =
-  ]],
-  false
-)
-
--- Update a buffer's contents on focus if it changed outside of Vim.
-vim.api.nvim_exec(
-  [[
-    au FocusGained,BufEnter * :checktime
-  ]],
-  false
-)
 
 -- Disable indent blank line on nvim-dashboard
 vim.cmd("let g:indentLine_fileTypeExclude = ['dashboard']")
