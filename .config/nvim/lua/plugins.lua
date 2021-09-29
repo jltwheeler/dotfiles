@@ -57,7 +57,7 @@ require('packer').startup(function()
   }
 
   -- Colorscheme (with treesitter support)
-  use 'dracula/vim'
+  use 'folke/tokyonight.nvim'
 
   -- Color highlighter
   use 'norcalli/nvim-colorizer.lua'
@@ -73,9 +73,11 @@ require('packer').startup(function()
 
   -- File explorer
   use {
-      'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons'
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'nvim-tree'.setup {} end
   }
+
 
   -- Add indentation guides even on blank lines
   use 'lukas-reineke/indent-blankline.nvim'
