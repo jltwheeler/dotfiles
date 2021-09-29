@@ -109,12 +109,14 @@ alias ...='cd ../../'
 alias c='clear && clear'
 
 alias vim='nvim'
-alias vimrc='vim ~/.config/nvim/init.vim'
+alias vi='nvim'
+alias vimrc='vim ~/.config/nvim/init.lua'
 alias zshrc='vim ~/.zshrc'
 alias tmuxrc='vim ~/.tmux.conf'
 alias nvmrc='node -v > .nvmrc'
 alias jws='aws --profile jltw-dev'
 alias resrc='source ~/.zshrc'
+alias aptsync='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 
 alias my-ip='dig +short myip.opendns @resolver1.opendns.com'
 alias reactcat='abd logcat *:S ReactNative:V ReactNativeJS:V'
@@ -128,6 +130,7 @@ alias tf='terraform'
 
 # Alias for dotfile commands with bare git repo
 alias dotman='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dm='dotman'
 
 # For nvm
 export NVM_DIR="$HOME/.nvm"
