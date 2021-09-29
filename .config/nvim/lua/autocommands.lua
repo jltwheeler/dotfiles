@@ -6,7 +6,7 @@ utils.define_augroups({
         {'BufWinEnter', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
         {'BufRead', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
         {'BufNewFile', '*', 'lua vim.opt.formatoptions:remove({\'c\', \'r\', \'o\'})'},
-        {'VimEnter', '*', 'PackerSync'}, -- Sync plugin updates on open of vim
+        -- {'VimEnter', '*', 'PackerSync'}, -- Sync plugin updates on open of vim
         {'TextYankPost', '*', 'silent! lua vim.highlight.on_yank()'}, -- Highlight on yank
         {'FileType', 'python', 'setl shiftwidth=4 sts=4 ts=2 et'},  -- Change tabs to be 4 spaces for python files only
         {'VimResized','*','wincmd ='}, -- Auto-resize splits when Vim gets resized.

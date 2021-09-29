@@ -57,7 +57,7 @@ require('packer').startup(function()
   }
 
   -- Colorscheme (with treesitter support)
-  use 'bluz71/vim-nightfly-guicolors'
+  use 'dracula/vim'
 
   -- Color highlighter
   use 'norcalli/nvim-colorizer.lua'

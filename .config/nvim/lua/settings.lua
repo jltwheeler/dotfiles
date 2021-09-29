@@ -3,7 +3,7 @@ local fn = vim.fn
 
 -- Colorscheme
 opt.termguicolors = true
-vim.cmd [[colorscheme nightfly]]
+vim.cmd [[colorscheme dracula]]
 
 -- For spell checking
 opt.spelllang = "en"
