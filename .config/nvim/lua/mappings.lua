@@ -45,7 +45,7 @@ keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = true, silent = fals
 
 -- Add Telescope leader shortcuts
 keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]], { noremap = true, silent = true })
-keymap('n', '<leader>ff', '<cmd>lua require(\'telescope.builtin\').find_files()<cr>', { noremap = true, silent = true })
+keymap('n', '<leader>ff', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,--iglob=!.git prompt_prefix=🔍 <cr>', { noremap = true, silent = true })
 keymap('n', '<leader>fg', '<cmd>lua require(\'telescope.builtin\').git_files()<cr>', { noremap = true, silent = true })
 keymap('n', '<leader>fs', '<cmd>lua require(\'telescope.builtin\').git_status()<cr>', { noremap = true, silent = true })
 keymap('n', '<leader>fw', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>', { noremap = true, silent = true })
