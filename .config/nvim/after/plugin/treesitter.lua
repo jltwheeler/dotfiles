@@ -21,6 +21,7 @@ require("nvim-treesitter.configs").setup {
     "css",
     "dockerfile",
     "graphql",
+    "hcl",
     "html",
     "javascript",
     "json",

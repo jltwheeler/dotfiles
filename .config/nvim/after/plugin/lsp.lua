@@ -1,4 +1,5 @@
 local nvim_lsp = require('lspconfig')
+local null_ls = require('null-ls')
 
 local generic_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -51,31 +52,53 @@ require('rust-tools').setup({
 })
 
 -- Enable null-ls integration for eslint integration
-require("null-ls").config {}
-nvim_lsp["null-ls"].setup {}
+null_ls.config {
+  save_after_format = false,
+  sources = {
+    -- eslint_d/js/jsx/ts/tsx handled by nvim_ts_utils
+    null_ls.builtins.formatting.prettier.with({
+      filetypes = { "yaml", "json", "html", "css" },
+    }),
+  }
+}
+nvim_lsp["null-ls"].setup {
+  on_attach = function(_, bufnr)
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>z",
+      "<cmd>lua vim.lsp.buf.formatting()<CR>",
+      { noremap = true, silent = true }
+    )
+  end,
+  flags = {
+    debounce_text_changes = 250,
+  },
+}
 
 -- TypeScript language server
 nvim_lsp.tsserver.setup {
     on_attach = function(client, bufnr)
-        generic_attach(client, bufnr)
 
         -- disable tsserver formatting if you plan on formatting via null-ls
         client.resolved_capabilities.document_formatting = false
         client.resolved_capabilities.document_range_formatting = false
 
+        generic_attach(client, bufnr)
+
         local ts_utils = require("nvim-lsp-ts-utils")
 
         ts_utils.setup {
-            debug = false,
+            debug = true,
             disable_commands = false,
             enable_import_on_completion = true,
 
-            import_all_timeout = 5000, -- ms
+            import_all_timeout = 5000,
             import_all_priorities = {
-                buffers = 4, -- loaded buffer names
-                buffer_content = 3, -- loaded buffer content
-                local_files = 2, -- git files or files with relative path markers
-                same_file = 1, -- add to existing import statement
+                buffers = 4,
+                buffer_content = 3,
+                local_files = 2,
+                same_file = 1,
             },
             import_all_scan_buffers = 100,
             import_all_select_source = false,
@@ -83,13 +106,18 @@ nvim_lsp.tsserver.setup {
             -- eslint
             eslint_enable_code_actions = true,
             eslint_enable_disable_comments = true,
-            eslint_bin = "eslint_d",
-            eslint_enable_diagnostics = false,
-            eslint_opts = {},
+            eslint_bin = "eslint",
+            eslint_enable_diagnostics = true,
+            eslint_opts =  {
+              condition = function(utils)
+                return utils.root_has_file(".eslintrc.js")
+              end,
+              diagnostics_format = "#{m} [#{c}]",
+            },
 
             -- formatting
             enable_formatting = true,
-            formatter = "prettier",
+            formatter = "eslint_d",
             formatter_opts = {},
 
             -- update imports on file move

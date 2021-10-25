@@ -56,8 +56,8 @@ keymap('n', '<leader>fo', [[<cmd>lua require('telescope.builtin').oldfiles()<cr>
 keymap('n', '<leader>fv', [[<cmd>lua require('jw.telescope').search_config_nvim()<cr>]], { noremap = true, silent = true })
 
 -- Gitsigns hunk navigation
-keymap('n', '<leader>gj', ':Gitsigns prev_hunk<CR>', { noremap = false, silent = false })
-keymap('n', '<leader>gk', ':Gitsigns next_hunk<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>gk', ':Gitsigns prev_hunk<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>gj', ':Gitsigns next_hunk<CR>', { noremap = false, silent = false })
 
 -- Bufferline
 keymap('n', '<leader>1', '<cmd>BufferLineGoToBuffer 1<CR>', { noremap = true, silent = false})
