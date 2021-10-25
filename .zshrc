@@ -113,6 +113,8 @@ alias aptsync='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove 
 alias vs='tmux split-window -h -p 30'
 alias hs='tmux split-window -v -p 30'
 alias lg='lazygit'
+alias jserve='cd ~/json-server && json-server --watch data.json --port 9000'
+alias myalias="grep '^alias' ~/.zshrc"
 
 # utility
 alias my-ip='dig +short myip.opendns.com @resolver1.opendns.com'
@@ -133,6 +135,7 @@ alias ggraph='git log --graph --oneline --decorate'
 
 # BM
 alias make-me='npm run db:userdata:generate -- --uuid 0605549a-98cd-4c63-9ee3-9d36ba4f6db9'
+alias make-user='npm run db:userdata:generate'
 alias eclean='npm run db:userdata:generate -- --clean'
 alias etclean='NODE_ENV=test npm run db:userdata:generate -- --clean'
 alias start-ios='./node_modules/.bin/react-native run-ios --simulator="iPhone X"'
@@ -156,28 +159,6 @@ alias dm='dotman'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# nvm auto change node version based on .nvmrc file in a directory
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # For rbenv
 eval "$(rbenv init -)"
