@@ -51,31 +51,6 @@ require('rust-tools').setup({
   }
 })
 
--- Enable null-ls integration for eslint integration
-null_ls.config {
-  save_after_format = false,
-  sources = {
-    -- eslint_d/js/jsx/ts/tsx handled by nvim_ts_utils
-    null_ls.builtins.formatting.prettier.with({
-      filetypes = { "yaml", "json", "html", "css" },
-    }),
-  }
-}
-nvim_lsp["null-ls"].setup {
-  on_attach = function(_, bufnr)
-    vim.api.nvim_buf_set_keymap(
-      bufnr,
-      "n",
-      "<leader>z",
-      "<cmd>lua vim.lsp.buf.formatting()<CR>",
-      { noremap = true, silent = true }
-    )
-  end,
-  flags = {
-    debounce_text_changes = 250,
-  },
-}
-
 -- TypeScript language server
 nvim_lsp.tsserver.setup {
     on_attach = function(client, bufnr)
@@ -89,7 +64,7 @@ nvim_lsp.tsserver.setup {
         local ts_utils = require("nvim-lsp-ts-utils")
 
         ts_utils.setup {
-            debug = true,
+            debug = false,
             disable_commands = false,
             enable_import_on_completion = true,
 
@@ -106,7 +81,7 @@ nvim_lsp.tsserver.setup {
             -- eslint
             eslint_enable_code_actions = true,
             eslint_enable_disable_comments = true,
-            eslint_bin = "eslint",
+            eslint_bin = "eslint_d",
             eslint_enable_diagnostics = true,
             eslint_opts =  {
               condition = function(utils)
@@ -151,3 +126,29 @@ nvim_lsp.tsserver.setup {
     end
 }
 
+-- Enable null-ls integration for eslint integration
+null_ls.config {
+  save_after_format = false,
+  sources = {
+    -- eslint_d/js/jsx/ts/tsx handled by nvim_ts_utils
+    null_ls.builtins.formatting.prettier.with({
+      filetypes = { "yaml", "json", "html", "css", "scss" },
+    }),
+  }
+}
+nvim_lsp["null-ls"].setup {
+  on_attach = function(_, bufnr)
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>z",
+      "<cmd>lua vim.lsp.buf.formatting()<CR>",
+      { noremap = true, silent = true }
+    )
+    -- format on save
+    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  end,
+  flags = {
+    debounce_text_changes = 250,
+  },
+}
