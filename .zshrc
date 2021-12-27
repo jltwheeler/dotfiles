@@ -122,10 +122,12 @@ alias reactcat='adb logcat *:S ReactNative:V ReactNativeJS:V'
 alias utime='date +%s'
 alias oports='sudo lsof -i -P -n | grep LISTEN'
 alias dup='docker-compose up'
+alias dupd='docker-compose up -d'
 alias ni='npm i'
 alias nid='npm i -D'
 alias tf='terraform'
 alias ide='source ~/scripts/ide.sh'
+alias cam='source ~/scripts/cam.sh'
 
 # git stuff
 alias branch-clean='git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d'
@@ -177,7 +179,8 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # Allow fzf to also search hidden dot files
 # export FZF_DEFAULT_COMMAND='find .* -type f'
 
-# For asdf
-. $(brew --prefix asdf)/asdf.sh
+# # For asdf
+# . $(brew --prefix asdf)/asdf.sh
 
 source /Users/jwheeler/.config/broot/launcher/bash/br
+
