@@ -124,7 +124,7 @@ nvim_lsp["terraformls"].setup({
   end,
 })
 
-nvim_lsp["eslint_d"].setup({
+--[[ nvim_lsp["eslint"].setup({
     root_dir = nvim_lsp.util.root_pattern(".eslintrc", ".eslintrc.js"),
     on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = true
@@ -135,7 +135,7 @@ nvim_lsp["eslint_d"].setup({
             enable = true,
         },
     },
-})
+}) ]]
 
 -- Enable null-ls integration for eslint integration
 null_ls.setup({
