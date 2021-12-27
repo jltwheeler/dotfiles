@@ -43,6 +43,9 @@ keymap('i', '?', '?<c-g>u', { noremap = true, silent = true })
 keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = false })
 keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = true, silent = false })
 
+-- nvim-git-link
+keymap('n', '<leader>gl', [[<cmd>lua require('nvim-git-link').get_remote_link()<cr>]], { noremap = true, silent = true })
+
 -- Add Telescope leader shortcuts
 keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]], { noremap = true, silent = true })
 keymap('n', '<leader>ff', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,--iglob=!.git prompt_prefix=🔍 <cr>', { noremap = true, silent = true })

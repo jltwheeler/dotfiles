@@ -9,6 +9,13 @@ require('packer').startup(function()
   }
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  -- Provide function context whilst scrolling
+  use {
+    'romgrk/nvim-treesitter-context',
+    config = function()
+      require'treesitter-context'.setup()
+    end
+  }
   -- Use treesitter to auto close and auto rename html tag
   use 'windwp/nvim-ts-autotag'
 
@@ -47,6 +54,7 @@ require('packer').startup(function()
       require('nvim-autopairs').setup{}
     end
   }
+  require('nvim-autopairs').setup{}
 
   -- Dashboard UI when opening neovim
   use 'glepnir/dashboard-nvim'
@@ -87,6 +95,7 @@ require('packer').startup(function()
 
   -- Git plugins
   use 'tpope/vim-fugitive' -- Git commands in nvim
+  use 'jltwheeler/nvim-git-link'
   -- Git gutter signs
   use {
     'lewis6991/gitsigns.nvim',
