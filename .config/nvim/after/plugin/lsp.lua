@@ -41,6 +41,7 @@ local generic_attach = function(client, bufnr)
   buf_set_keymap('n', 'ga', '<cmd>LspCodeAction<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>LspSignatureHelp<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>LspFormatting<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 
   if client.resolved_capabilities.document_formatting then
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
