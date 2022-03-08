@@ -45,6 +45,7 @@ require('packer').startup(function()
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
+  use 'rust-lang/rust.vim'
   -- Rust lsp utils
   use 'simrat39/rust-tools.nvim'
 
