@@ -62,6 +62,15 @@ keymap('n', '<leader>fv', [[<cmd>lua require('jw.telescope').search_config_nvim(
 keymap('n', '<leader>gk', ':Gitsigns prev_hunk<CR>', { noremap = false, silent = false })
 keymap('n', '<leader>gj', ':Gitsigns next_hunk<CR>', { noremap = false, silent = false })
 
+-- Actions
+keymap('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', { noremap = false, silent = false })
+
 -- Bufferline
 keymap('n', '<leader>1', '<cmd>BufferLineGoToBuffer 1<CR>', { noremap = true, silent = false})
 keymap('n', '<leader>2', '<cmd>BufferLineGoToBuffer 2<CR>', { noremap = true, silent = false})

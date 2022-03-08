@@ -87,7 +87,15 @@ require('packer').startup(function()
   }
 
   -- Add indentation guides even on blank lines
-  use 'lukas-reineke/indent-blankline.nvim'
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require("indent_blankline").setup {
+        filetype_exclude = { "alpha" },
+        show_current_context = true,
+      }
+    end
+  }
 
   -- Easy navigation between tmux panes and vim
   use 'christoomey/vim-tmux-navigator'
