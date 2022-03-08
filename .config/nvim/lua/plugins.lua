@@ -118,6 +118,8 @@ require('packer').startup(function()
     end
   }
 
+  use 'yamatsum/nvim-cursorline'
+
   -- Commenting library
   use 'b3nj5m1n/kommentary'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
