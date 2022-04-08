@@ -22,6 +22,6 @@ tmux selectp -t 0
 tmux split-window -v -p 50
 tmux send-keys -t 'Background Servers'.0 'cd ~/dev/bymiles-engine' C-m 'clear' C-m 'npm run start:dev' C-m
 tmux send-keys -t 'Background Servers'.1 'cd ~/dev/bymiles-dealership' C-m 'clear' C-m 'npm run build && npm run serve' C-m
-tmux send-keys -t 'Background Servers'.2 'cd ~/dev/bymiles-members-services/services/stripe' C-m 'clear' C-m 'npm run start:db && npm run start:dev:private' C-m
+tmux send-keys -t 'Background Servers'.2 'cd ~/dev/bymiles-policy-services/services/policy-prepaid-credits' C-m 'clear' C-m 'npm run start:dev' C-m
 
 tmux attach-session -t $SESSION:1

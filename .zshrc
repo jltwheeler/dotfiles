@@ -115,6 +115,7 @@ alias hs='tmux split-window -v -p 30'
 alias lg='lazygit'
 alias jserve='cd ~/json-server && json-server --watch data.json --port 9000'
 alias myalias="grep '^alias' ~/.zshrc"
+alias start="npm run start:dev"
 
 # utility
 alias my-ip='dig +short myip.opendns.com @resolver1.opendns.com'
@@ -141,6 +142,7 @@ alias make-user='npm run db:userdata:generate'
 alias eclean='npm run db:userdata:generate -- --clean'
 alias etclean='NODE_ENV=test npm run db:userdata:generate -- --clean'
 alias start-ios='./node_modules/.bin/react-native run-ios --simulator="iPhone X"'
+alias opsec2='aws-vault exec bymiles-ops-snake -- ./bin/run ec2:securitygrouprule:set -s gocd -e'
 
 
 # Android
@@ -184,3 +186,5 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 source /Users/jwheeler/.config/broot/launcher/bash/br
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
