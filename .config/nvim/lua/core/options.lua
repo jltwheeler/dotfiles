@@ -3,7 +3,7 @@ local fn = vim.fn
 
 -- Colorscheme
 opt.termguicolors = true
-vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[colorscheme tokyonight]]
 
 -- For spell checking
 opt.spelllang = "en"
@@ -63,7 +63,7 @@ opt.cmdheight = 2
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
-opt.updatetime = 250
+opt.updatetime = 300
 
 -- Don't pass messages to |ins-completion-menu|.
 vim.o.shortmess = vim.o.shortmess .. "c"
