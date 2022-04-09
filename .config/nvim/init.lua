@@ -14,9 +14,11 @@ end
 
 -- plugin configs
 require("configs.autopairs")
+require("configs.bufferline")
 require("configs.cmp")
 require("configs.gitsigns")
 require("configs.lsp")
+require("configs.lualine")
 require("configs.telescope")
 require("configs.treesitter")
 require("configs.nvim-tree")

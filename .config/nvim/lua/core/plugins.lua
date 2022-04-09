@@ -96,6 +96,12 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
+  -- Buffer line
+  use 'akinsho/bufferline.nvim'
+
+  -- Status line
+  use 'hoob3rt/lualine.nvim'
+
   -- Utilities
   use "windwp/nvim-autopairs"
   use 'b3nj5m1n/kommentary' -- commenting code

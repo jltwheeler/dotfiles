@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/kommentary",
     url = "https://github.com/b3nj5m1n/kommentary"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
