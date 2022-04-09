@@ -37,12 +37,10 @@ nvim_tree.setup {
   open_on_setup = false,
   auto_reload_on_write = true,
   ignore_ft_on_setup = {
-    "startify",
     "dashboard",
     "alpha",
   },
   open_on_tab = false,
-  hijack_cursor = false,
   update_cwd = true,
   update_to_buf_dir = {
     enable = true,
@@ -72,7 +70,7 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 60,
+    width = 50,
     height = 30,
     hide_root_folder = true,
     side = "right",

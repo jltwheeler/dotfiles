@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   kommentary = {
     loaded = true,
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/kommentary",
