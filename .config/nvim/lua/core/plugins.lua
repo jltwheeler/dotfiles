@@ -95,6 +95,10 @@ return packer.startup(function(use)
   -- git
   use "lewis6991/gitsigns.nvim"
 
+  -- File explorer
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+
   -- Utilities
   use "windwp/nvim-autopairs"
   use 'b3nj5m1n/kommentary' -- commenting code
