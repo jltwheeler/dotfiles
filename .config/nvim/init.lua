@@ -5,5 +5,7 @@ require("core.plugins")
 require("core.colorscheme")
 require("configs.autopairs")
 require("configs.cmp")
+require("configs.gitsigns")
 require("configs.lsp")
-
+require("configs.telescope")
+require("configs.treesitter")

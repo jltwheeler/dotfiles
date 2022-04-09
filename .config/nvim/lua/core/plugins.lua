@@ -51,6 +51,26 @@ return packer.startup(function(use)
     as = "catppuccin"
   })
 
+  -- Color highlighter
+  use 'norcalli/nvim-colorizer.lua'
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "nvim-treesitter/playground"
+  use "p00f/nvim-ts-rainbow" -- Raindbow brackets for TS
+  use 'nvim-treesitter/nvim-treesitter-textobjects' -- Additional textobjects for treesitter
+  use {
+    'romgrk/nvim-treesitter-context',
+    config = function()
+      require'treesitter-context'.setup()
+    end
+  }
+  use 'windwp/nvim-ts-autotag' -- Use treesitter to auto close and auto rename html tag
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
   -- lsp plugins
   use 'neovim/nvim-lspconfig' -- Configure the built-in LSP client
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
@@ -72,7 +92,15 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
 
+  -- git
+  use "lewis6991/gitsigns.nvim"
+
+  -- Utilities
   use "windwp/nvim-autopairs"
+  use 'b3nj5m1n/kommentary' -- commenting code
+  use 'tpope/vim-surround'
+  use 'jltwheeler/nvim-git-link'
+  use 'christoomey/vim-tmux-navigator' -- Easy navigation between tmux panes and vim
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

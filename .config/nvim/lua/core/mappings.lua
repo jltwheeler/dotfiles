@@ -28,7 +28,7 @@ keymap('n', '<leader>sc', 'spell!<CR>', opts)
 -- Yanking to behave like other Vim commands.
 keymap('n', 'Y', 'y$', opts)
 
--- Keep searches and joins centered 
+-- Keep searches and joins centered
 keymap('n', 'n', 'nzzzv', opts)
 keymap('n', 'N', 'Nzzzv', opts)
 keymap('n', 'J', 'mzJ`z', opts)
@@ -48,7 +48,7 @@ keymap('n', '<leader>gl', [[<cmd>lua require('nvim-git-link').get_remote_link()<
 
 -- Add Telescope leader shortcuts
 keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]], opts)
-keymap('n', '<leader>ff', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,--iglob=!.git prompt_prefix=🔍 <cr>', opts)
+keymap('n', '<leader>ff', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,--iglob=!.git <cr>', opts)
 keymap('n', '<leader>fg', '<cmd>lua require(\'telescope.builtin\').git_files()<cr>', opts)
 keymap('n', '<leader>fs', '<cmd>lua require(\'telescope.builtin\').git_status()<cr>', opts)
 keymap('n', '<leader>fw', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>', opts)
@@ -66,7 +66,7 @@ keymap('n', '<leader>gj', ':Gitsigns next_hunk<CR>', opts)
 keymap('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', opts)
 keymap('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>', opts)
 keymap('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>', opts)
-keymap('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_lineopts<CR>', { noremap = false, silent = false })
+keymap('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_lineopts<CR>', opts)
 keymap('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>', opts)
 keymap('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>', opts)
 keymap('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
