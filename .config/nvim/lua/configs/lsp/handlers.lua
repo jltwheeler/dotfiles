@@ -85,9 +85,15 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+
+  if client.resolved_capabilities.document_formatting then
+    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  end
+
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
+
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end

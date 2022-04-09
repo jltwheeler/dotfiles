@@ -71,6 +71,12 @@ return packer.startup(function(use)
   -- lsp plugins
   use 'neovim/nvim-lspconfig' -- Configure the built-in LSP client
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use 'jose-elias-alvarez/null-ls.nvim' -- formatting, linting etc.
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils' -- Utilities to improve the TS dev ex
+
+  -- rust
+  use 'rust-lang/rust.vim'
+  use 'simrat39/rust-tools.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -101,6 +107,17 @@ return packer.startup(function(use)
 
   -- Status line
   use 'hoob3rt/lualine.nvim'
+
+  -- Add indentation guides even on blank lines
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require("indent_blankline").setup {
+        filetype_exclude = { "alpha" },
+        show_current_context = true,
+      }
+    end
+  }
 
   -- Utilities
   use "windwp/nvim-autopairs"

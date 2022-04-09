@@ -124,6 +124,12 @@ _G.packer_plugins = {
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    config = { "\27LJ\2\n~\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21filetype_exclude\1\0\1\25show_current_context\2\1\2\0\0\nalpha\nsetup\21indent_blankline\frequire\0" },
+    loaded = true,
+    path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   kommentary = {
     loaded = true,
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/kommentary",
@@ -133,6 +139,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -158,6 +169,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
+  ["nvim-lsp-ts-utils"] = {
+    loaded = true,
+    path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils",
+    url = "https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -225,6 +241,16 @@ _G.packer_plugins = {
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["rust.vim"] = {
+    loaded = true,
+    path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/rust.vim",
+    url = "https://github.com/rust-lang/rust.vim"
+  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/Users/jwheeler/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
@@ -257,6 +283,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-treesitter-context]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
 time([[Config for nvim-treesitter-context]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\n~\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21filetype_exclude\1\0\1\25show_current_context\2\1\2\0\0\nalpha\nsetup\21indent_blankline\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
