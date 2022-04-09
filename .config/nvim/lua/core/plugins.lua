@@ -119,6 +119,14 @@ return packer.startup(function(use)
     end
   }
 
+  -- Dashboard
+  use {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+  }
+
   -- Utilities
   use "windwp/nvim-autopairs"
   use 'b3nj5m1n/kommentary' -- commenting code
