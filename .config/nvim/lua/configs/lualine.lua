@@ -1,4 +1,3 @@
-
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	return
@@ -34,7 +33,7 @@ local mode = {
 
 local filetype = {
 	"filetype",
-	icons_enabled = false,
+	icons_enabled = true,
 	icon = nil,
 }
 
