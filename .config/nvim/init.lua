@@ -13,6 +13,7 @@ if not status_ok then
 end
 
 -- plugin configs
+require("configs.alpha")
 require("configs.autopairs")
 require("configs.bufferline")
 require("configs.cmp")
