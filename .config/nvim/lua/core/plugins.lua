@@ -104,6 +104,9 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
+  -- Tree view for outlining lsp symbols
+  use 'simrat39/symbols-outline.nvim'
+
   -- Buffer line
   use 'akinsho/bufferline.nvim'
 
@@ -123,6 +126,14 @@ return packer.startup(function(use)
 
   -- Dashboard
   use { 'goolord/alpha-nvim' }
+
+  -- smooth scrolling
+  use {
+    'karb94/neoscroll.nvim',
+    config = function()
+      require'neoscroll'.setup()
+    end
+  }
 
   -- Utilities
   use "windwp/nvim-autopairs"
