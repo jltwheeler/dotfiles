@@ -55,6 +55,7 @@ keymap('n', '<leader>fw', '<cmd>lua require(\'telescope.builtin\').live_grep()<c
 keymap('n', '<leader>fb', '<cmd>lua require(\'telescope.builtin\').buffers()<cr>', opts)
 keymap('n', '<leader>fh', '<cmd>lua require(\'telescope.builtin\').help_tags()<cr>', opts)
 keymap('n', '<leader>fd', [[<cmd>lua require('telescope.builtin').grep_string()<cr>]], opts)
+keymap('n', '<leader>fm', [[<cmd>lua require('telescope.builtin').keymaps()<cr>]], opts)
 keymap('n', '<leader>fo', [[<cmd>lua require('telescope.builtin').oldfiles()<cr>]], opts)
 keymap('n', '<leader>fv', [[<cmd>lua require('core.jw.telescope').search_config_nvim()<cr>]], opts)
 

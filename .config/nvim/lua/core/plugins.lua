@@ -119,6 +119,8 @@ return packer.startup(function(use)
   -- Dashboard
   use { 'goolord/alpha-nvim' }
 
+  use { "akinsho/toggleterm.nvim" } -- terminal within neovim
+
   -- smooth scrolling
   use {
     'karb94/neoscroll.nvim',
