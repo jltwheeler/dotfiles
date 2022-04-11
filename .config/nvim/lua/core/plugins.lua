@@ -114,15 +114,7 @@ return packer.startup(function(use)
   use 'hoob3rt/lualine.nvim'
 
   -- Add indentation guides even on blank lines
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require("indent_blankline").setup {
-        filetype_exclude = { "alpha" },
-        show_current_context = true,
-      }
-    end
-  }
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- Dashboard
   use { 'goolord/alpha-nvim' }

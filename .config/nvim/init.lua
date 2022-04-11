@@ -7,7 +7,7 @@ require("core.colorscheme")
 
 -- Speed up loading Lua modules in Neovim to improve startup time.
 -- impatient needs to be setup before any other lua plugin is loaded
-local status_ok, gitsigns = pcall(require, "impatient")
+local status_ok, impatient = pcall(require, "impatient")
 if not status_ok then
   return
 end
@@ -19,6 +19,7 @@ require("configs.bufferline")
 require("configs.cmp")
 require("configs.filetype")
 require("configs.gitsigns")
+require("configs.indent-blank-line")
 require("configs.kommentary")
 require("configs.nvim-tree")
 require("configs.lsp")
