@@ -16,7 +16,7 @@ local check_backspace = function()
 end
 
 --   פּ ﯟ   some other good icons
-local kind_icons = {
+--[[ local kind_icons = {
   Text = "",
   Method = "m",
   Function = "",
@@ -42,8 +42,7 @@ local kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = "",
-}
--- find more here: https://www.nerdfonts.com/cheat-sheet
+} ]]
 
 cmp.setup {
   snippet = {
@@ -97,8 +96,8 @@ cmp.setup {
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      vim_item.kind = require('lspkind').presets.default[vim_item.kind] .. " " .. vim_item.kind -- use plugin
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         nvim_lua = "[NVIM_LUA]",

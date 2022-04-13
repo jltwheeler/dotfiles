@@ -136,13 +136,18 @@ local function ts_util_attach(bufnr, client)
 end
 
 M.on_attach = function(client, bufnr)
-
   if client.resolved_capabilities.document_formatting then
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+      vim.cmd([[
+      augroup LspFormatting
+          autocmd! * <buffer>
+          autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+      augroup END
+      ]])
   end
 
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
     ts_util_attach(bufnr, client)
   end
 
