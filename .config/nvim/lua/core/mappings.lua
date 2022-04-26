@@ -87,4 +87,4 @@ keymap('n', '<leader>9', '<cmd>BufferLineGoToBuffer 9<CR>', opts)
 keymap('n', '<leader>fn', '<cmd>DashboardNewFile<CR>', opts)
 
 
-keymap('n', '<leader>rf', '<cmd>lua vim.lsp.buf.formatting_sync()<CR>', opts)
+keymap('n', '<leader>rf', '<cmd>lua vim.lsp.buf.formatting_sync({}, 5000)<CR>', opts)
