@@ -23,6 +23,7 @@ configs.setup({
 		"scss",
 		"svelte",
 		"toml",
+		"tsx",
 		"typescript",
 		"vim",
 		"vue",
