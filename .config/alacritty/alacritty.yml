@@ -19,6 +19,7 @@ window:
   startup_mode: Maximized
   title: term
   dynamic_title: false
+  decorations: none
 
 font:
   size: 15
