@@ -123,3 +123,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+. "$HOME/.cargo/env"
